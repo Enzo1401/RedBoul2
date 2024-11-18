@@ -55,9 +55,14 @@ if (isset($_SESSION['user_id'])) {
             <label for="email">Email :</label>
             <input type="email" id="email" name="email" required>
             <label for="password">Mot de passe :</label>
-            <input type="password" id="password" name="password" required>
+            <input type="password" id="password" name="password" required><br><br>
             <button type="submit">Connexion</button>
+            <br><br>
+            <div>
+                <a href="creationCompte.php" id="creationCompte">Créer un compte</a>
+            </div>
         </form>
+        
     </body>
     </html>
 

@@ -37,6 +37,8 @@ foreach ($produits as $produit) {
     if ($isAdmin) {
         echo "<a href='modifyProduct.php?id=" . $produit['id_produit'] . "' class='btn btn-edit'>Modifier</a>";
         echo "<a href='deleteProduct.php?id=" . $produit['id_produit'] . "' class='btn btn-delete'>Supprimer</a>";
+    } else {
+        echo "<a href='commande.php' class='bouton-commande'>Commander</a>";
     }
 
     echo "</div>

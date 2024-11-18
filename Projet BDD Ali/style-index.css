@@ -110,6 +110,22 @@ body {
     background-color: #c82333;
 }
 
+.bouton-commande {
+    background-color: #0867b4;
+    display: inline-block;
+    padding: 10px 15px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+    color: white;
+    transition: background-color 0.3s ease;
+    width: 100%;
+    text-align: center;
+}
+.bouton-commande:hover {
+    background-color: #19abef;
+}
+
 /* Style pour le bouton d'ajout d'article */
 .button-ajout {
     display: inline-block; /* Permet d'utiliser des marges et du padding */
