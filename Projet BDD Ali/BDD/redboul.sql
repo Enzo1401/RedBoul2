@@ -149,3 +149,36 @@ BEGIN
 END //
 DELIMITER ;
 
+/*Curseur permettant de vérifié les stock */
+
+DELIMITER //
+
+CREATE PROCEDURE check_product_stock()
+BEGIN
+    DECLARE done INT DEFAULT 0;
+    DECLARE product_id INT;
+    DECLARE product_stock INT;
+    DECLARE stock_cursor CURSOR FOR
+        SELECT id_produit, stock
+        FROM produit;
+    
+    DECLARE CONTINUE HANDLER FOR NOT FOUND SET done = 1;
+    
+    OPEN stock_cursor;
+    
+    read_loop: LOOP
+        FETCH stock_cursor INTO product_id, product_stock;
+        IF done THEN
+            LEAVE read_loop;
+        END IF;
+        IF product_stock < 1 THEN
+            SELECT CONCAT('Le produit ID ', product_id, ' est en rupture de stock');
+        END IF;
+    END LOOP;
+    
+    CLOSE stock_cursor;
+END //
+
+DELIMITER ;
+
+CALL `check_product_stock`();
