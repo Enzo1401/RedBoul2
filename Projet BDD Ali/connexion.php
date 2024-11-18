@@ -1,14 +1,13 @@
 <?php
 include("header.php");
 include("BDD/bdd.php");
-session_start(); // Démarre une session pour gérer l'authentification
 
 // Vérifie si l'utilisateur est déjà connecté
 if (isset($_SESSION['user_id'])) {
     // Si l'utilisateur est connecté, affiche un message et un bouton de déconnexion
     echo "<link rel='stylesheet' href='style-connexion.css'>";
     echo "<div class='connected-container'>";
-    echo "<p>Vous êtes déjà connecté.</p>";
+    echo "<p>Vous êtes déjà connecté</p>";
     echo "<form method='post' action='deconnexion.php'>
             <button type='submit' class='btn'>Déconnexion</button>
         </form>";

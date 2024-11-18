@@ -1,3 +1,12 @@
+<?php
+include 'BDD/bdd.php';
+
+session_start();
+
+$isSuperAdmin = isset($_SESSION['user_role']) && $_SESSION['user_role'] == 3;
+
+?>
+
 <!DOCTYPE html>
 <html lang="fr">
 <head>
@@ -23,6 +32,7 @@
                 <li><a href="produit.php" class="no-decoration">Nos produits</a></li>
                 <li><a href="commande.php" class="no-decoration">Commander</a></li>
                 <li><a href="connexion.php" class="no-decoration">Connexion</a></li>
+                <?php if ($isSuperAdmin) { echo "<li><a href='hierarchie.php' class='no-decoration'>Hiérarchie</a></li>";} ?>
             </ul>
         </nav>
     </header>

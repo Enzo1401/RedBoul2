@@ -1,0 +1,103 @@
+/* Global settings */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    color: #333;
+    margin: 0;
+    padding: 0;
+    margin-top: 120px;
+}
+
+.hierarchie-title {
+    text-align: center;
+    padding: 20px;
+    background-color: #043464;
+    color: white;
+    margin: 0;
+}
+
+/* Table styling */
+table {
+    width: 80%;
+    margin: 30px auto;
+    border-collapse: collapse;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+th, td {
+    padding: 12px;
+    text-align: left;
+    border: 1px solid #ddd;
+    background-color: #fff;
+}
+
+th {
+    background-color: #043464;
+    color: white;
+}
+
+/* Form elements */
+select, button {
+    padding: 8px 12px;
+    font-size: 14px;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+    cursor: pointer;
+}
+
+button {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    margin: 5px;
+}
+
+
+button[type="submit"] {
+    background-color: #043464;
+    color: white;
+    border-radius: 5px;
+}
+
+button[type="submit"]:hover {
+    background-color: #043464;
+}
+
+button[type="submit"]:active {
+    background-color: #043464;
+}
+
+button[class="delete"] {
+    background-color: #dc3545;
+    color: white;
+    border-radius: 5px;
+}
+
+button[class="delete"]:hover {
+    background-color: #dc3545;
+}
+
+button[class="delete"]:active {
+    background-color: #dc3545;
+}
+
+/* Actions column */
+td button {
+    margin-right: 10px;
+}
+
+/* Responsiveness */
+@media screen and (max-width: 768px) {
+    table {
+        width: 100%;
+        margin: 20px 0;
+    }
+
+    th, td {
+        padding: 8px;
+    }
+
+    h1 {
+        font-size: 1.5em;
+    }
+}

@@ -41,7 +41,7 @@ $produits = $bdd->query("SELECT * FROM produit")->fetchAll();
                 <select name="produit" id="produit" required>
                     <?php
                     foreach ($produits as $produit) {
-                        echo '<option value="' . $produit['id_produit'] . '">' . $produit['nom'] . '</option>';
+                        echo '<option value="' . $produit['id_produit'] . '">' . $produit['nom'] . ' - ' . $produit['stock'] . ' produit(s) restant(s)</option>';
                     }
                     ?>
                 </select>

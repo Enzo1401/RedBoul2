@@ -9,9 +9,7 @@ $prenom = $_POST['prenom'];
 $address = $_POST['adresse'];
 $mail = $_POST['email'];
 $password = $_POST['passwords'];
-
-// Définir le rôle par défaut (par exemple, 2 pour "Utilisateur")
-$id_role = 2; // Assurez-vous que ce rôle existe dans la table "roles"
+$id_role=1;
 
 // Préparer les requêtes pour insérer les données
 $user = $bdd->prepare('INSERT INTO users(nom, prenom, adresse, email, passwords, id_role) VALUES(?, ?, ?, ?, ?, ?)');

@@ -48,5 +48,6 @@ if (!empty($_FILES['image']))
     $updateProduct ->bindParam(":id", $id, PDO::PARAM_INT);
     $updateProduct ->execute();
 }
-
+header('Location: produit.php');
+exit;
 ?>

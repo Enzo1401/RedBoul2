@@ -7,15 +7,14 @@ create table users(
     passwords varchar(50) not null,
     email varchar(100) not null,
     adresse varchar(255) not null,
-    id_role INT,
-    FOREIGN KEY (id_role) REFERENCES roles(id_role)
+    id_role INT NOT NULL DEFAULT 1,
+    FOREIGN KEY (id_role) REFERENCES role(id_role)
  );
 
-create table roles (
-    id_roles INT PRIMARY KEY AUTO_INCREMENT,
-    role_name VARCHAR(50) NOT NULL
+CREATE TABLE role (
+    id_role INT AUTO_INCREMENT PRIMARY KEY,
+    role_name VARCHAR(50) NOT NULL UNIQUE
 );
-
 
 create table produit(
     id_produit int primary key auto_increment,
@@ -50,14 +49,12 @@ insert into produit (nom, prix, descriptions,images,stock) values
 ('Redbull Red Edition', 2.50, 'Description for Red Edition', 'image/redEdition.png', 10),
 ('Redbull White Edition', 2.50, 'Description for White Edition', 'image/whiteEdition.png', 10);
 
--- Insérer les rôles "Administrateur" et "Utilisateur"
-INSERT INTO roles (role_name) VALUES 
-('Administrateur'),
-('Utilisateur');
+-- Insérer les rôles
+INSERT INTO role (role_name) VALUES ('user'), ('admin'), ('superadmin');
 
 
 INSERT INTO users (nom, prenom, passwords, email, adresse, id_role) 
-VALUES ('admin', 'admin', '1234', 'admin@gmail.com', 'rue du loulou', 1); -- 1 pour Administrateur, 2 pour Utilisateur
+VALUES ('superadmin', 'admin', '1234', 'admin@gmail.com', 'rue du loulou', 3);
 
 -----------------------REQUETE SQL-----------------------
 
