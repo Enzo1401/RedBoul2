@@ -1,0 +1,72 @@
+/*----------header----------*/
+
+/* Réinitialisation des styles par défaut de la page */
+* {
+    padding: 0;
+    margin: 0;
+    text-decoration: none;
+    list-style: none;
+    box-sizing: border-box; /* Pour une gestion plus cohérente des marges et des espacements */
+}
+
+body {
+    margin: 0;
+    padding-top: 71px; /* Ajoute un espace équivalent à la hauteur de l'en-tête */
+    font-family: 'Arial', sans-serif; /* Police par défaut */
+}
+
+header {
+    background-color: white; /* Couleur de fond de l'en-tête */
+    display: flex;
+    align-items: center; /* Alignement vertical des éléments au centre */
+    justify-content: space-between; /* Aligne les éléments sur les côtés */
+    padding: 10px 30px; /* Espacement intérieur autour de l'en-tête */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Ombre douce pour donner de la profondeur */
+    position: fixed; /* Fixe l'en-tête en haut de la page même lors du défilement */
+    top: 0;
+    width: 100%;
+    z-index: 1000; /* Indice de profondeur pour s'assurer que l'en-tête est au-dessus des autres éléments */
+}
+
+.title-header {
+    color: #043464;
+    margin-top: 30px;
+}
+
+.logo img {
+    width: 90px;
+    margin-top: 10px;
+}
+
+.logo a {
+    color: black;
+    text-decoration: none;
+    font-size: 20px; /* Taille du texte du logo si texte */
+}
+
+nav {
+    margin-left: auto; /* Aligne la navigation à droite de l'en-tête */
+}
+
+nav ul {
+    display: flex; /* Affiche les éléments de la liste en ligne */
+    gap: 30px; /* Espacement entre chaque élément de la navigation */
+}
+
+nav ul li a {
+    color: black;
+    font-size: 16px; /* Taille du texte des liens */
+    border: 1px solid transparent; /* Bordure transparente par défaut */
+    padding: 8px 16px; /* Espace intérieur pour plus de clarté */
+    transition: 0.4s ease; /* Transition fluide pour l'animation */
+    border-radius: 6px; /* Coins arrondis pour un style doux */
+}
+
+nav ul li a:hover {
+    background-color: #043464; /* Fond rouge au survol */
+    color: white; /* Texte blanc au survol */
+    border-color: #043464; /* Bordure devient rouge au survol */
+}
+
+
+

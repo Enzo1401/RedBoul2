@@ -1,0 +1,102 @@
+/* formulaire de commande*/
+
+
+/* Style global pour une meilleure lisibilité */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f5f5f5;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+form {
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 500px;
+    box-sizing: border-box;
+    margin-top: 130px;
+}
+
+/* Style pour les champs de saisie */
+form div {
+    margin-bottom: 20px;
+}
+
+label {
+    font-size: 16px;
+    font-weight: bold;
+    margin-bottom: 5px;
+    display: block;
+}
+
+input[type="text"],
+input[type="email"],
+textarea,
+select {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+    box-sizing: border-box;
+    transition: border-color 0.3s ease;
+}
+
+input[type="text"]:focus,
+input[type="email"]:focus,
+textarea:focus,
+select:focus {
+    border-color: #007bff;
+    outline: none;
+}
+
+/* Style pour le champ de quantité */
+input[type="number"] {
+    width: 100%; /* Prend toute la largeur de l'élément parent */
+    padding: 10px; /* Espace intérieur pour rendre le champ plus confortable */
+    margin-top: 5px; /* Espace au-dessus du champ */
+    margin-bottom: 15px; /* Espace en dessous du champ */
+    border: 1px solid #ccc; /* Bordure grise claire */
+    border-radius: 4px; /* Coins arrondis pour un look moderne */
+    font-size: 16px; /* Taille de police pour le texte */
+    transition: border-color 0.3s; /* Transition pour les changements de couleur de bordure */
+}
+
+input[type="number"]:focus {
+    border-color: red; /* Change la couleur de la bordure au focus */
+    outline: none; /* Supprime le contour par défaut */
+}
+
+label {
+    font-weight: bold; /* Met le texte du label en gras */
+}
+
+/* Style pour le bouton */
+button {
+    background-color: red;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 18px;
+    transition: background-color 0.3s ease;
+    width: 100%;
+}
+
+button:hover {
+    background-color: #218838;
+}
+
+/* Style pour le texte de zone de message */
+textarea {
+    resize: vertical;
+    height: 100px;
+}

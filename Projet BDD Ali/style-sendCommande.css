@@ -1,0 +1,64 @@
+/* Style pour le message de confirmation de commande */
+.order-message {
+    background-color: #28a745; /* Couleur de fond verte pour signifier le succès */
+    color: white; /* Texte en blanc pour un bon contraste */
+    padding: 15px 20px; /* Espacement intérieur pour aérer le contenu */
+    border-radius: 8px; /* Bords arrondis */
+    text-align: center; /* Centrer le texte */
+    font-size: 18px; /* Taille de la police un peu plus grande */
+    font-weight: bold; /* Texte en gras */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Ombre pour donner de la profondeur */
+    max-width: 600px; /* Largeur maximale */
+    margin: 30px auto; /* Centrer le message avec une marge automatique */
+    position: relative; /* Position relative pour placer les icônes */
+    border: 2px solid #218838; /* Bordure pour un effet de profondeur */
+    transition: all 0.3s ease; /* Animation douce au survol */
+    margin-top: 150px;
+    margin-bottom: 50px;
+}
+
+.order-message:hover {
+    background-color: #218838; /* Couleur de fond légèrement plus foncée au survol */
+    transform: translateY(-3px); /* Légère translation vers le haut au survol */
+}
+
+/* Icône de succès */
+.order-message:before {
+    content: "\2713"; /* Code du caractère pour la coche (✔) */
+    font-size: 20px; /* Taille de l'icône */
+    position: absolute; /* Position absolue pour placer l'icône */
+    left: 15px; /* Distance de l'icône depuis la gauche */
+    top: 50%; /* Centrage vertical */
+    transform: translateY(-50%); /* Centrage vertical avec la transformation */
+}
+
+/* Animation pour rendre le message visible */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.order-message {
+    animation: fadeIn 0.5s ease-out; /* Animation d'apparition douce */
+}
+
+/* Style pour le bouton de redirection */
+.btn-redirect {
+    display: block; /* Pour que le bouton prenne toute la largeur disponible */
+    width: fit-content; /* S'adapte à la taille du texte */
+    margin: 20px auto; /* Centre le bouton avec un espace au-dessus */
+    background-color: #043464; /* Couleur de fond bleue */
+    color: white; /* Texte en blanc */
+    padding: 10px 20px; /* Espacement intérieur */
+    border-radius: 8px; /* Coins arrondis */
+    text-decoration: none; /* Supprime le soulignement du texte */
+    font-size: 16px; /* Taille de la police */
+    font-weight: bold; /* Texte en gras */
+    transition: background-color 0.3s ease, transform 0.2s; /* Animation pour le survol */
+}
+
+/* Effet de survol pour le bouton */
+.btn-redirect:hover {
+    background-color: #03274a; /* Couleur plus foncée au survol */
+    transform: translateY(-2px); /* Légère translation vers le haut au survol */
+}
