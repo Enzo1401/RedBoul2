@@ -1,4 +1,4 @@
-create database redboul;
+--create database redboul;
 
 create table users(
     id_users int primary key auto_increment,
@@ -56,21 +56,6 @@ INSERT INTO role (role_name) VALUES ('user'), ('admin'), ('superadmin');
 INSERT INTO users (nom, prenom, passwords, email, adresse, id_role) 
 VALUES ('superadmin', 'admin', '1234', 'admin@gmail.com', 'rue du loulou', 3);
 
------------------------REQUETE SQL-----------------------
-
-
-insert into produit (nom, prix, descriptions,images,stock) values 
-(?,?,?,?,?);
-
-select * from produit;
-insert into users(nom, prenom, passwords, email,adresse)VALUES(
-    'flahaut','axel','aaa','aaa@gmail.com','aa');
-
-
-delete from produit where nom= ?; 
-
-update set produit stock = stock + ? where nom =?;
-
 /*Procédure pour ajouter la commande dans la table commandes et mettre à jour le stock*/
 
 DELIMITER //
@@ -94,8 +79,6 @@ END //
 
 DELIMITER ;
 
-CALL passer_commande(1, 1, 2, '2023-10-01');
-
 DELIMITER //
 
 /*Procedure pour ajouter un produit*/
@@ -113,8 +96,6 @@ BEGIN
 END //
 
 DELIMITER ;
-
-CALL ajouter_produit('Redbull Orange Edition', 3.00, 'Orange-flavored energy drink.', 'image/orangeEdition.png', 2 );
 
 /*Trigger pour mettre à jour la quantité de produit après une commande*/
 DELIMITER //
