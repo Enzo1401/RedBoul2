@@ -71,6 +71,7 @@ delete from produit where nom= ?;
 
 update set produit stock = stock + ? where nom =?;
 
+/*Procédure pour ajouter la commande dans la table commandes et mettre à jour le stock*/
 
 DELIMITER //
 
@@ -93,6 +94,29 @@ END //
 
 DELIMITER ;
 
+CALL passer_commande(1, 1, 2, '2023-10-01');
+
+DELIMITER //
+
+/*Procedure pour ajouter un produit*/
+
+CREATE PROCEDURE ajouter_produit(
+    IN p_nom VARCHAR(50),
+    IN p_prix DECIMAL(10,2),
+    IN p_descriptions TEXT,
+    IN p_images VARCHAR(255),
+    IN p_stock INT
+)
+BEGIN
+    INSERT INTO produit (nom, prix, descriptions, images, stock)
+    VALUES (p_nom, p_prix, p_descriptions, p_images, p_stock);
+END //
+
+DELIMITER ;
+
+CALL ajouter_produit('Redbull Orange Edition', 3.00, 'Orange-flavored energy drink.', 'image/orangeEdition.png', 2 );
+
+/*Trigger pour mettre à jour la quantité de produit après une commande*/
 DELIMITER //
 
 CREATE TRIGGER update_stock_after_order
@@ -107,7 +131,7 @@ END //
 
 DELIMITER ;
 
-
+/*Trigger pour vérifier qu'il reste assez de quantité en stock*/
 DELIMITER //
 
 CREATE TRIGGER check_stock_before_insert
@@ -130,12 +154,7 @@ END //
 
 DELIMITER ;
 
-
-INSERT INTO users (id_users, nom, email) VALUES (1, 'Nom Utilisateur', 'email@example.com');
-
-
-CALL passer_commande(1, 1, 2, '2023-10-01');
-
+/*Trigger pour afficher les produits supprimer dans la table log_suppression*/
 DELIMITER //
 
 CREATE TRIGGER log_suppression_produit
@@ -146,7 +165,7 @@ BEGIN
 END //
 DELIMITER ;
 
-/*Curseur permettant de vérifié les stock */
+/*Curseur permettant de vérifier les stock */
 
 DELIMITER //
 
